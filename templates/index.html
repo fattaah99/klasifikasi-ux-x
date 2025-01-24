@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      nav {
+        display: flex;
+        padding: 5px;
+        text-decoration: none;
+        background-color: #3a1078;
+        font-size: 20px;
+      }
+      nav ul {
+        list-style-type: none;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+      }
+      main {
+        padding-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="prediksi.html">Prediksi</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div><h2>Selamat Datang di Web Klasifikasi Masalah Penggunaan Aplikasi X Berdasarkan Ulasan Google Play Store Menggunakan Algoritma SVM</h2></div>
+      <p>Web ini digunakan sebagai user interface melakukan prediksi terhadap ulasan</p>
+      <form action="/predict" method="post">
+        <div><label for="review">Ulasan</label></div>
+        <textarea name="review" id="review" rows="4" cols="50" placeholder="ketikan ulasan"></textarea><br /><br />
+        <button type="submit">Prediksi</button>
+      </form>
+
+      {% if review and sentiment %}
+      <hr />
+      <h2>Hasil Prediksi:</h2>
+      <p><strong>Review:</strong> {{ review }}</p>
+      <p><strong>Sentimen:</strong> {{ sentiment }}</p>
+      {% endif %}
+    </main>
+  </body>
+</html>
